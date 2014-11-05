@@ -1,10 +1,3 @@
-variable "aws_vpc" {}
-variable "network" {}
-variable "aws_route_table_private" {}
-variable "aws_centos_ami" {}
-variable "aws_key_name" {}
-variable "aws_subnet_bastion" {}
-
 resource "aws_subnet" "cloudera" {
 	vpc_id = "${var.aws_vpc}"
 	cidr_block = "${var.network}.10.0/24"
