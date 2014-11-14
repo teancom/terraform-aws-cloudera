@@ -27,7 +27,6 @@ sed -i "s/KEYNAME-CFN-REPLACE/${KEYNAME}/" /home/ec2-user/cloudera/download.sh
 sed -i "s/HADOOPINSTANCE-COUNT-CFN-REPLACE/${HADOOP_INSTANCE_COUNT}/" /home/ec2-user/cloudera/download.sh
 sed -i "s/HADOOPINSTANCE-TYPE-CFN-REPLACE/${HADOOP_INSTANCE_TYPE}/" /home/ec2-user/cloudera/download.sh
 
-sed -i "s/, HBASE/, HBASE, SPARK/" /home/ec2-user/cloudera/download.sh
 
 sudo /bin/sh /home/ec2-user/cloudera/download.sh
 sudo /bin/sh /home/ec2-user/cloudera/cleanup.sh
@@ -39,3 +38,4 @@ sed -i "s/image:.*/image: ${CENTOS_AMI}/" /home/ec2-user/cloudera/cloudera-direc
 sed -i "s/# accessKeyId.*/accessKeyId: ${AWS_KEY}/" /home/ec2-user/cloudera/cloudera-director-1*/aws.simple.conf
 sed -i "s%# secretAccessKey.*%secretAccessKey: ${AWS_PRIV}%" /home/ec2-user/cloudera/cloudera-director-1*/aws.simple.conf
 sed -i 's#echo.*#/usr/bin/yum clean all\n/usr/bin/yum -y install vim#' /home/ec2-user/cloudera/cloudera-director-1*/aws.simple.conf
+sed -i "s/, HBASE/, HBASE, SPARK/" /home/ec2-user/cloudera/cloudera-director-1*/aws.simple.conf
