@@ -5,7 +5,7 @@ resource "aws_subnet" "cloudera" {
 
 resource "aws_route_table_association" "cloudera-private" {
 	subnet_id = "${aws_subnet.cloudera.id}"
-	route_table_id = "${var.aws_route_table_private}"
+	route_table_id = "${var.aws_route_table_private_id}"
 }
 
 # Create the Cloudera Launcher Server & Security Group
