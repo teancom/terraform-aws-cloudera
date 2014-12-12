@@ -19,7 +19,7 @@ module "cloudera" {
   network = "${var.network}" # This is the prefix to use, like 10.10 or 192.168
   aws_centos_ami = "${lookup(var.aws_centos_ami, var.aws_region)}"
   aws_key_name = "${var.aws_key_name}"
-  aws_vpc = "${aws_vpc.default.id}"
+  aws_vpc_id = "${aws_vpc_id.default.id}"
   aws_route_table_private = "${aws_route_table.private.id}"
   aws_subnet_bastion = "${aws_subnet.bastion.id}"
 }

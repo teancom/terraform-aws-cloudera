@@ -1,4 +1,4 @@
-variable "aws_vpc" {}
+variable "aws_vpc_id" {}
 variable "network" {}
 variable "aws_route_table_private_id" {}
 variable "aws_centos_ami" {}
