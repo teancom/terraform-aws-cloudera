@@ -1,5 +1,5 @@
 resource "aws_subnet" "cloudera" {
-	vpc_id = "${var.aws_vpc}"
+	vpc_id = "${var.aws_vpc_id}"
 	cidr_block = "${var.network}.10.0/24"
 }
 
@@ -12,7 +12,7 @@ resource "aws_route_table_association" "cloudera-private" {
 resource "aws_security_group" "cloudera_launcher" {
 	name = "cloudera_launcher-${var.aws_vpc_id}"
 	description = "Allow SSH traffic from the internet"
-	vpc_id = "${var.aws_vpc}"
+	vpc_id = "${var.aws_vpc_id}"
 
 	ingress {
 		from_port = 22
