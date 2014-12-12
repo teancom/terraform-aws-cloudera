@@ -10,7 +10,7 @@ resource "aws_route_table_association" "cloudera-private" {
 
 # Create the Cloudera Launcher Server & Security Group
 resource "aws_security_group" "cloudera_launcher" {
-	name = "cloudera_launcher"
+	name = "cloudera_launcher-${var.aws_vpc_id}"
 	description = "Allow SSH traffic from the internet"
 	vpc_id = "${var.aws_vpc}"
 
